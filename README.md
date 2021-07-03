@@ -2,9 +2,20 @@
 
 # Screenshots 📸
 
+# HOME
+
 <img src="./Screenshots/Screen1.png">
+
+# ADMIN ROUTE
+
 <img src="./Screenshots/Screen2.png">
+
+# USER ROUTE
+
 <img src="./Screenshots/Screen3.png">
+
+# MODAL
+
 <img src="./Screenshots/Screen4.png">
 
 # Technologies ⚙️
