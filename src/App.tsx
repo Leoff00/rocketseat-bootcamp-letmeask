@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/Home";
+import NewRoom from "./pages/newRoom";
+import Room from "./pages/Room";
+import AdminRoom from "./pages/AdminRoom";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import { AuthContextProvider } from "./contexts/AuthContext";
+import { createContext } from "react";
+
+type ThemeContextType = {
+   mode: string;
+};
+
+export const ThemeContext = createContext({} as ThemeContextType);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <BrowserRouter>
+         <ThemeContext.Provider value={{ mode: "dark" }}>
+            <AuthContextProvider>
+               <Switch>
+                  <Route path="/" exact={true} component={Home}></Route>
+                  <Route path="/rooms/new" component={NewRoom}></Route>
+                  <Route path="/rooms/:id" component={Room}></Route>
+                  <Route path="/admin/rooms/:id" component={AdminRoom}></Route>
+               </Switch>
+            </AuthContextProvider>
+         </ThemeContext.Provider>
+      </BrowserRouter>
+   );
 }
 
 export default App;
