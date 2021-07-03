@@ -51,7 +51,7 @@
 # My feature 💡
 
 In this feature i implement a modal to remove the questions
-in the admin route to better user experience.
+in the admin route to better UI (user experience).
 
 # Medias 📲
 
